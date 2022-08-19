@@ -4,7 +4,9 @@ from envS import Quadrotor
 UAV1 = Quadrotor()
 UAV1.setRandomObstacles(n_obstacle=10, ball_r=1.2)
 Target_state = np.array([5, 5 ,12 , 0, 0, 0, 1, 0, 0, 0, 0, 0, 0])
+# Do not change Target_state
 dt = 0.05
+# Do not change dt
 
 T = 100
 # Time horizon, can be set as arbitrary positive value.
@@ -18,7 +20,7 @@ UAV1.setState(init_x)
 # This should be replaced by the designed control input sequence
 u_traj = np.random.randn(T, 4)
 
-# This simulates the UAV control and returns the final reward.
+# This simulates the UAV control and returns the final reward. Do not change the following parts
 Total_reward = 0
 for ut in u_traj:
     UAV1.step(ut)

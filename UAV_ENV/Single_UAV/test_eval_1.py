@@ -7,7 +7,9 @@ UAV1.setObstacles(
     [[0, 0, 7], [2, 4, 3], [4, 1, 9], [-3.5, 2, 7], [-2.5, -3.5, 5.5], [-2, 2, 10], [-3, -1, 4], [3, -4, 7],
      [-4, -5, 5]], 1.2)
 Target_state = np.array([5, 5, 12, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0])
+# Do not change Target_state
 dt = 0.05
+# Do not change dt
 
 T = 100
 # Time horizon, can be set as arbitrary positive value.
@@ -23,7 +25,7 @@ UAV1.setState(init_x)
 # This should be replaced by the designed control input sequence
 u_traj = np.random.randn(T, 4)
 
-# This simulates the UAV control and returns the final reward.
+# This simulates the UAV control and returns the final reward. Do not change the following parts
 Total_reward = 0
 for ut in u_traj:
     UAV1.step(ut)

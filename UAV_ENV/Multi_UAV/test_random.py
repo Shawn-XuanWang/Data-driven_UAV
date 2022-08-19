@@ -6,11 +6,14 @@ UAV_team = Quadrotor_swarm(num_uav)
 UAV_team.setRandomObstacles(n_obstacle=7, ball_r=1.2)
 Target_state = [np.array([5, 5, 12, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]), np.array([6, 5, 12, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]),
                 np.array([5, 6, 12, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]), np.array([6, 6, 12, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0])]
+# Do not change Target_state
 dt = 0.05
+# Do not change dt
 
 T = 100
 # Time horizon, can be set as arbitrary positive value.
-# Depends on how long it takes the controller to drive the UAV to the target location [5, 5, 12]
+# Depends on how long it takes the controller to drive the UAV to the target location
+# [5, 5, 12], [6 ,5 ,12], [5, 6, 12], [6, 6, 12]
 
 # Set initial states
 init_team = [np.random.randn(UAV_team.n_state) for _ in range(num_uav)] # UAV_team.n_state = 13
@@ -23,7 +26,7 @@ UAV_team.setState(init_team)  # Set initial states
 # This should be replaced by the designed control input sequence
 u_traj = [[np.random.randn(4) for _ in range(num_uav)] for _ in range(T)]
 
-# This simulates the UAV control and returns the final reward.
+# This simulates the UAV control and returns the final reward. Do not change the following parts
 Total_reward = 0
 for ut in u_traj:
     for i in range(num_uav):
